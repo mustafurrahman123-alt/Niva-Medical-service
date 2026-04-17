@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f8ff;
+}
+
+header {
+  background: #1e88e5;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner {
+  text-align: center;
+  padding: 40px;
+  background: #e3f2fd;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
