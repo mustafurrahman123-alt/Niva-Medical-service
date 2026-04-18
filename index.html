@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>নিভা মেডিকেল ষ্ট'ৰ | Trusted Healthcare Since 1994</title>
-    <!-- Google Fonts & Font Awesome -->
+    <title>নিভা মেডিকেল ষ্ট'ৰ — Online Health Store | Since 1994</title>
+    <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -16,300 +16,291 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(145deg, #f0f7fc 0%, #eef2f8 100%);
-            color: #1a2e3f;
+            background: #f8fafc;
+            color: #1e2a3e;
             scroll-behavior: smooth;
         }
 
-        /* custom scroll */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #dce5ec;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2c7a5e;
-            border-radius: 10px;
+        /* modern 1mg style colors */
+        :root {
+            --primary: #0e8b5e;
+            --primary-dark: #0a6b48;
+            --primary-light: #dff1ea;
+            --accent: #2c7da0;
+            --gray-bg: #f9fbfd;
+            --border-light: #e6edf2;
         }
 
-        /* navbar professional */
+        /* scroll */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eef2f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 12px;
+        }
+
+        /* navbar - clean, shadow */
         .navbar {
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(2px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            padding: 0.9rem 3rem;
+            z-index: 1100;
+            padding: 0.8rem 3rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            border-bottom: 1px solid #e0edf2;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
+            cursor: pointer;
         }
 
-        .logo-circle {
-            background: linear-gradient(145deg, #0e6b4f, #1b8c6b);
-            width: 54px;
-            height: 54px;
-            border-radius: 32px;
+        .logo-icon {
+            background: linear-gradient(145deg, var(--primary), #0b7550);
+            width: 48px;
+            height: 48px;
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 18px rgba(0,0,0,0.1);
-            transition: 0.25s ease;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
         }
 
-        .logo-circle i {
-            font-size: 30px;
+        .logo-icon i {
+            font-size: 26px;
             color: white;
         }
 
         .logo-text h1 {
-            font-size: 1.85rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #125e46, #1c8262);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.4px;
+            color: #1a4a3a;
+            letter-spacing: -0.3px;
         }
 
         .logo-text p {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #548c7a;
-            letter-spacing: 0.3px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #5c7c6e;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             font-weight: 600;
-            color: #1c4e6e;
+            color: #2c5a6e;
             transition: 0.2s;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a i {
             font-size: 1rem;
-            padding: 8px 0;
-            position: relative;
         }
 
-        .nav-links a:hover {
-            color: #1b7e5c;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
         }
 
-        .nav-links a.active {
-            color: #1b7e5c;
-            border-bottom: 2.5px solid #1b7e5c;
-        }
-
-        .admin-btn {
-            background: linear-gradient(95deg, #1e5f48, #228b67);
+        .admin-nav-btn {
+            background: var(--primary);
             color: white !important;
-            padding: 8px 22px !important;
+            padding: 8px 20px;
             border-radius: 40px;
-            border: none;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+            font-weight: 600;
+            transition: 0.2s;
         }
 
-        .admin-btn:hover {
-            background: #0f5741;
-            transform: translateY(-2px);
+        .admin-nav-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
         /* container */
         .container {
-            max-width: 1300px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 2rem 2rem 3rem;
+            padding: 1.8rem 2rem 3rem;
         }
 
+        /* sections */
         .section {
             display: none;
-            animation: fadeUp 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: fadeSlide 0.35s ease-out;
         }
 
         .active-section {
             display: block;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Home hero */
-        .hero {
-            background: linear-gradient(115deg, #ffffff 30%, #f1faf7 100%);
-            border-radius: 42px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
+        /* 1mg style hero banner */
+        .hero-grid {
             display: flex;
             flex-wrap: wrap;
+            gap: 2rem;
+            background: linear-gradient(115deg, #ffffff 55%, #f2faf7 100%);
+            border-radius: 32px;
+            padding: 2rem;
+            margin-bottom: 2rem;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(80, 140, 110, 0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eef3f0;
         }
 
-        .hero-text h2 {
-            font-size: 2.6rem;
+        .hero-content h2 {
+            font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(125deg, #145c45, #1d8362);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #144e3a;
             line-height: 1.2;
         }
 
-        .hero-text p {
-            margin-top: 1rem;
-            font-size: 1.1rem;
-            color: #2a5e72;
-            max-width: 540px;
-            line-height: 1.4;
-        }
-
         .hero-badge {
-            background: #e2f0ec;
-            padding: 0.6rem 1.2rem;
-            border-radius: 80px;
+            background: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 60px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            color: #0b5942;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-top: 1rem;
         }
 
-        .stat-cards {
+        /* category cards like 1mg */
+        .cat-grid {
             display: flex;
-            gap: 1.8rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            margin: 1.8rem 0;
         }
-
-        .card {
+        .cat-card {
             background: white;
-            border-radius: 28px;
-            padding: 1.6rem;
+            border-radius: 24px;
+            padding: 1rem 1.2rem;
+            text-align: center;
             flex: 1;
-            min-width: 180px;
-            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e4f0ec;
+            min-width: 110px;
+            border: 1px solid var(--border-light);
             transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
-
-        .card i {
-            font-size: 2.2rem;
-            color: #268e6c;
-            margin-bottom: 12px;
+        .cat-card i {
+            font-size: 2rem;
+            color: var(--primary);
         }
-
-        .featured-products {
-            margin-top: 2rem;
-        }
-
-        .grid-products {
+        .stat-row {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 1.2rem;
+            margin: 2rem 0;
         }
-
-        .product-item {
+        .stat-item {
             background: white;
             border-radius: 28px;
+            padding: 1.2rem;
+            flex: 1;
+            border: 1px solid var(--border-light);
+        }
+
+        /* product showcase like 1mg */
+        .product-showcase {
+            margin-top: 2rem;
+        }
+        .product-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 24px;
             padding: 1.2rem;
             width: 180px;
             text-align: center;
             transition: 0.2s;
-            border: 1px solid #e2edf0;
+            border: 1px solid #eef2f0;
         }
 
-        /* about card */
-        .about-card, .contact-card {
+        /* about/contact cards */
+        .info-card {
             background: white;
-            border-radius: 38px;
-            padding: 2.4rem;
-            box-shadow: 0 18px 32px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e1f0ea;
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid #eef3f0;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.02);
         }
 
-        .map-glam {
-            background: #eef3f0;
+        .map-modern {
+            background: #eef3ef;
             border-radius: 28px;
-            height: 280px;
+            height: 260px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1.6rem;
+            margin-top: 1.5rem;
             background-image: url('https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Tamulpur+Assam+781354');
             background-size: cover;
             background-position: center;
-            position: relative;
-            border-radius: 28px;
         }
 
-        /* admin panel professional */
-        .admin-login-box, .admin-dashboard {
+        /* admin panel modern */
+        .admin-card {
             background: white;
-            border-radius: 38px;
-            padding: 2rem 2.2rem;
+            border-radius: 32px;
+            padding: 2rem;
             max-width: 600px;
             margin: 1rem auto;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
-            border: 1px solid #ddebe5;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+            border: 1px solid #e9f0ed;
         }
 
-        .input-group {
-            margin-bottom: 1.4rem;
-        }
-
-        .input-group input, .input-group textarea {
+        .input-modern {
             width: 100%;
             padding: 14px 18px;
-            border: 1.5px solid #d9e4e0;
+            border: 1.5px solid #e0eae5;
             border-radius: 48px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: 0.2s;
-            font-family: 'Inter', sans-serif;
         }
 
         button {
-            background: linear-gradient(95deg, #1c785b, #259671);
+            background: var(--primary);
             border: none;
             padding: 12px 28px;
-            border-radius: 48px;
+            border-radius: 44px;
             color: white;
             font-weight: 700;
             cursor: pointer;
             transition: 0.2s;
-            font-size: 0.95rem;
         }
 
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            background: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
         .inventory-table {
@@ -319,31 +310,18 @@
         }
 
         .inventory-table th, .inventory-table td {
-            border-bottom: 1px solid #e3ede8;
+            border-bottom: 1px solid #e2ede7;
             padding: 14px 8px;
             text-align: left;
-        }
-
-        .delete-med-btn {
-            background: #c2412c;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-        }
-
-        .edit-stock-btn {
-            background: #2c5f6e;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            margin-left: 6px;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background: #e2edf0;
+            background: #f1f5f9;
             margin-top: 3rem;
+            color: #3b6b5c;
             font-size: 0.85rem;
-            color: #1e5e52;
         }
 
         @media (max-width: 780px) {
@@ -352,8 +330,8 @@
                 flex-direction: column;
                 gap: 12px;
             }
-            .hero-text h2 {
-                font-size: 1.9rem;
+            .hero-content h2 {
+                font-size: 1.7rem;
             }
         }
     </style>
@@ -362,114 +340,116 @@
 
 <header>
     <div class="navbar">
-        <div class="logo-area">
-            <div class="logo-circle">
+        <div class="logo-area" onclick="showSection('home')">
+            <div class="logo-icon">
                 <i class="fas fa-prescription-bottle-alt"></i>
             </div>
             <div class="logo-text">
-                <h1>নিভা মেডিকেল ষ্ট'ৰ</h1>
-                <p>⚕️ তামুলপুৰ বৰঘূলি | Est. 1994</p>
+                <h1>নিভা মেডিকেল</h1>
+                <p>⚕️ তামুলপুৰ বৰঘূলি | Since 1994</p>
             </div>
         </div>
         <div class="nav-links">
-            <a href="#" data-page="home" class="nav-link active">হোম</a>
-            <a href="#" data-page="about" class="nav-link">About</a>
-            <a href="#" data-page="contact" class="nav-link">যোগাযোগ</a>
-            <a href="#" data-page="admin" class="nav-link admin-btn"><i class="fas fa-user-shield"></i> Admin</a>
+            <a href="#" data-page="home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="#" data-page="about" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#" data-page="contact" class="nav-link"><i class="fas fa-phone-alt"></i> Contact</a>
+            <a href="#" data-page="admin" class="nav-link admin-nav-btn"><i class="fas fa-shield-alt"></i> Admin</a>
         </div>
     </div>
 </header>
 
 <main class="container">
-    <!-- HOME SECTION -->
+    <!-- HOME section - 1mg style -->
     <div id="home-section" class="section active-section">
-        <div class="hero">
-            <div class="hero-text">
-                <h2>আপোনাৰ স্বাস্থ্য<br>আমাৰ অগ্রাধিকাৰ</h2>
-                <p>২৪×৭ ঘণ্টা সেৱা | সঠিক ঔষধ, সঠিক সময়ত | তামুলপুৰ বৰঘূলিৰ বিশ্বস্ত নাম</p>
-                <div class="hero-badge"><i class="fas fa-clock"></i> ২৪/৭ Open · Free Home Delivery*</div>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h2>আপোনাৰ স্বাস্থ্য,<br>আমাৰ অঙ্গীকাৰ</h2>
+                <p style="margin-top: 0.8rem; color: #3e6b5c;">২৪×৭ ঘণ্টা সেৱা | সঠিক ঔষধ, সঠিক সময়ত | তামুলপুৰৰ বিশ্বস্ত নাম</p>
+                <div class="hero-badge"><i class="fas fa-truck"></i> Free Home Delivery*</div>
             </div>
-            <div style="font-size: 5rem;"><i class="fas fa-hand-holding-heart" style="color:#259671;"></i></div>
+            <div><i class="fas fa-hand-holding-medical" style="font-size: 5rem; color: var(--primary);"></i></div>
         </div>
-        <div class="stat-cards">
-            <div class="card"><i class="fas fa-calendar-alt"></i><h3>২৯+ Years</h3><p>Trust & Excellence</p></div>
-            <div class="card"><i class="fas fa-user-tie"></i><h3>Md. Nawaz Rasul</h3><p>Manager (24×7 Care)</p></div>
-            <div class="card"><i class="fas fa-location-dot"></i><h3>Tamulpur</h3><p>Bhorguli, Pin-781354</p></div>
+
+        <div class="cat-grid">
+            <div class="cat-card"><i class="fas fa-capsules"></i><p>Medicines</p></div>
+            <div class="cat-card"><i class="fas fa-heartbeat"></i><p>Diabetes</p></div>
+            <div class="cat-card"><i class="fas fa-baby-carriage"></i><p>Baby Care</p></div>
+            <div class="cat-card"><i class="fas fa-lungs"></i><p>Respiratory</p></div>
         </div>
-        <div class="featured-products">
-            <h3><i class="fas fa-capsules"></i> Our Specialties</h3>
-            <div class="grid-products">
-                <div class="product-item"><i class="fas fa-pills" style="font-size: 2rem;"></i><p>Prescription Drugs</p></div>
-                <div class="product-item"><i class="fas fa-syringe"></i><p>Wellness Kits</p></div>
-                <div class="product-item"><i class="fas fa-heartbeat"></i><p>Diabetes Care</p></div>
-                <div class="product-item"><i class="fas fa-baby"></i><p>Mother & Child</p></div>
+
+        <div class="stat-row">
+            <div class="stat-item"><i class="fas fa-calendar-check" style="color: var(--primary);"></i><h3>29+ Years</h3><p>Trusted Excellence</p></div>
+            <div class="stat-item"><i class="fas fa-user-md"></i><h3>নাৱাজ ৰছুল</h3><p>Manager (24×7)</p></div>
+            <div class="stat-item"><i class="fas fa-map-marker-alt"></i><h3>তামুলপুৰ</h3><p>বৰঘূলি, 781354</p></div>
+        </div>
+
+        <div class="product-showcase">
+            <h3><i class="fas fa-prescription"></i> Popular Healthcare</h3>
+            <div class="product-grid">
+                <div class="product-card"><i class="fas fa-pills" style="font-size: 2rem;"></i><p>Prescription Drugs</p></div>
+                <div class="product-card"><i class="fas fa-syringe"></i><p>Wellness Kits</p></div>
+                <div class="product-card"><i class="fas fa-procedures"></i><p>Support & Care</p></div>
             </div>
         </div>
     </div>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT section -->
     <div id="about-section" class="section">
-        <div class="about-card">
-            <h2><i class="fas fa-store-alt"></i> আমাৰ বিষয়ে — নিভা মেডিকেল ষ্ট'ৰ</h2>
-            <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.6;">১৯৯৪ চনত <strong>মইনুল হক</strong> দ্বাৰা প্ৰতিষ্ঠা কৰা <strong>নিভা মেডিকেল ষ্ট'ৰ</strong> তামুলপুৰ বৰঘূলিৰ সকলোৰে সু-পৰিচিত নাম।</p>
-            <p style="margin-top: 1rem; line-height: 1.5;">বিগত ২৯+ বছৰ ধৰি আমি গুণগত মানসম্পন্ন ঔষধ আৰু স্বাস্থ্য সামগ্ৰী যোগান ধৰি আহিছো। <strong>নাৱাজ ৰছুল</strong> এ ২৪×৭ ঘণ্টা সেৱা আগবঢ়াই আহিছে, যাৰ ফলত ৰাতি যিকোনো জৰুৰীকালীন পৰিস্থিতিত গ্ৰাহকে সেৱা লাভ কৰে। আমাৰ মূল লক্ষ্য — স্বাস্থ্য সেৱাত সুলভতা আৰু বিশ্বাস।</p>
-            <div style="margin-top: 1.8rem; background: linear-gradient(105deg, #eef6f3, #e3f0ea); border-radius: 28px; padding: 1.2rem;">
-                <i class="fas fa-quote-left"></i> "সত্যতা আৰু সেবাই আমাক গঢ় দিছে — গ্ৰাহকৰ সন্তুষ্টি আমাৰ অঙ্গীকাৰ"
-            </div>
+        <div class="info-card">
+            <h2><i class="fas fa-store-alt"></i> About নিভা মেডিকেল ষ্ট'ৰ</h2>
+            <p style="margin-top: 1rem; line-height: 1.6;">১৯৯৪ চনত <strong>মইনুল হক</strong> দ্বাৰা প্ৰতিষ্ঠা কৰা <strong>নিভা মেডিকেল ষ্ট'ৰ</strong> তামুলপুৰ বৰঘূলিৰ সকলোৰে সু-পৰিচিত নাম।</p>
+            <p style="margin-top: 1rem;">বিগত ২৯+ বছৰ ধৰি আমি গুণগত মানসম্পন্ন ঔষধ আৰু স্বাস্থ্য সামগ্ৰী যোগান ধৰি আহিছো। <strong>নাৱাজ ৰছুল</strong> এ ২৪×৭ ঘণ্টা সেৱা আগবঢ়াই আহিছে, যাৰ ফলত ৰাতি যিকোনো জৰুৰীকালীন পৰিস্থিতিত গ্ৰাহকে সেৱা লাভ কৰে।</p>
+            <div style="margin-top: 1.5rem; background: #eff8f3; padding: 1rem; border-radius: 24px;"><i class="fas fa-quote-left"></i> সত্যতা আৰু সেবাই আমাক গঢ় দিছে — গ্ৰাহকৰ সন্তুষ্টি আমাৰ অঙ্গীকাৰ</div>
         </div>
     </div>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT section -->
     <div id="contact-section" class="section">
-        <div class="contact-card">
+        <div class="info-card">
             <h2><i class="fas fa-address-card"></i> যোগাযোগৰ তথ্য</h2>
-            <ul style="margin-top: 1.5rem; list-style: none; line-height: 2.3;">
-                <li><i class="fas fa-user-circle" style="width: 28px;"></i> <strong>ব্যৱস্থাপক:</strong> নাৱাজ ৰছুল</li>
-                <li><i class="fas fa-phone-alt"></i> <strong>ফোন নম্বৰ:</strong> <a href="tel:9954172699" style="color:#1b7e5c;">9954172699</a> , <a href="tel:8822480793" style="color:#1b7e5c;">8822480793</a></li>
+            <ul style="margin-top: 1.2rem; list-style: none; line-height: 2.2;">
+                <li><i class="fas fa-user-tie"></i> <strong>ব্যৱস্থাপক:</strong> নাৱাজ ৰছুল</li>
+                <li><i class="fas fa-phone-alt"></i> <strong>ফোন:</strong> <a href="tel:9954172699" style="color:var(--primary);">9954172699</a> , <a href="tel:8822480793" style="color:var(--primary);">8822480793</a></li>
                 <li><i class="fas fa-map-pin"></i> <strong>পিন কোড:</strong> 781354</li>
                 <li><i class="fas fa-location-dot"></i> <strong>ঠিকনা:</strong> বৰঘূলি, তামুলপুৰ, অসম</li>
             </ul>
-            <div class="map-glam">
-                <a href="https://www.google.com/maps/search/?api=1&query=Tamulpur+Bhorguli+Assam+781354" target="_blank" style="background: rgba(0,0,0,0.7); padding: 12px 24px; border-radius: 60px; color: white; text-decoration: none; font-weight: 600;"><i class="fab fa-google"></i> Google Map ৰ লিংক</a>
+            <div class="map-modern">
+                <a href="https://www.google.com/maps/search/?api=1&query=Tamulpur+Bhorguli+Assam+781354" target="_blank" style="background: rgba(0,0,0,0.65); padding: 12px 22px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600;"><i class="fab fa-google"></i> Google Map ত চাওক</a>
             </div>
-            <p style="margin-top: 1rem;"><i class="fas fa-hourglass-half"></i> ২৪×৭ ঘণ্টা সেৱা উপলব্ধ। যিকোনো জৰুৰীকালীন পৰিস্থিতিত যোগাযোগ কৰক।</p>
+            <p style="margin-top: 1rem;"><i class="fas fa-clock"></i> ২৪×৭ ঘণ্টা খোলা থাকে | জৰুৰীকালীন সেৱা</p>
         </div>
     </div>
 
-    <!-- ADMIN PANEL SECTION -->
+    <!-- ADMIN PANEL (1mg style) -->
     <div id="admin-section" class="section">
         <div id="adminLoginContainer">
-            <div class="admin-login-box">
-                <h2><i class="fas fa-lock"></i> Admin Secure Login</h2>
-                <p style="margin-bottom: 1rem;">প্ৰশাসনিক পেনেলত প্ৰৱেশ কৰিবলৈ পাছৱাৰ্ড দিয়ক (demo: admin123)</p>
+            <div class="admin-card">
+                <h2><i class="fas fa-lock"></i> Admin Access</h2>
+                <p style="margin-bottom: 1rem;">প্ৰশাসনিক পেনেলত প্ৰৱেশ কৰক (demo: admin123)</p>
                 <div class="input-group">
-                    <input type="password" id="adminPassword" placeholder="Enter admin password">
+                    <input type="password" id="adminPassword" class="input-modern" placeholder="Enter password">
                 </div>
-                <button id="loginAdminBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
-                <div id="loginMsg" class="msg" style="margin-top: 12px;"></div>
+                <button id="loginAdminBtn">Login <i class="fas fa-arrow-right"></i></button>
+                <div id="loginMsg" style="margin-top: 12px;"></div>
             </div>
         </div>
         <div id="adminDashboard" style="display: none;">
-            <div class="admin-dashboard">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                    <h2><i class="fas fa-chalkboard-user"></i> Admin Dashboard — ঔষধ ষ্টক ব্যৱস্থাপনা</h2>
-                    <button id="logoutAdminBtn" style="background:#b45340;">Logout <i class="fas fa-sign-out-alt"></i></button>
+            <div class="admin-card">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                    <h2><i class="fas fa-chalkboard"></i> Inventory Manager</h2>
+                    <button id="logoutAdminBtn" style="background:#9e5c48;">Logout</button>
                 </div>
-                <p style="margin: 1rem 0;">ইয়াত ঔষধৰ নাম আৰু ষ্টক পৰিমাণ যোগ/সম্পাদনা কৰক (ব্ৰাউজাৰ সংৰক্ষণ)</p>
-                <div class="input-group" style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <input type="text" id="medName" placeholder="ঔষধৰ নাম (যেনে: Paracetamol)" style="flex:2">
-                    <input type="number" id="medStock" placeholder="ষ্টক পৰিমাণ" style="flex:1">
-                    <button id="addMedicineBtn">Add / Update Stock</button>
+                <p style="margin: 1rem 0;">Manage medicine stock — add or update medicines (local storage)</p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <input type="text" id="medName" class="input-modern" placeholder="Medicine name" style="flex:2">
+                    <input type="number" id="medStock" class="input-modern" placeholder="Stock" style="flex:1">
+                    <button id="addMedicineBtn">Add / Update</button>
                 </div>
-                <table class="inventory-table" id="inventoryTable">
-                    <thead>
-                        <tr><th>ঔষধৰ নাম</th><th>ষ্টক</th><th>কাৰ্য্য</th></tr>
-                    </thead>
-                    <tbody id="inventoryBody">
-                        <tr><td colspan="3">ল'ডিং...</td></tr>
-                    </tbody>
+                <table class="inventory-table">
+                    <thead><tr><th>Medicine</th><th>Stock</th><th>Actions</th></tr></thead>
+                    <tbody id="inventoryBody"><tr><td colspan="3">Loading...</td></tr></tbody>
                 </table>
-                <div id="inventoryMsg" class="msg" style="margin-top: 12px;"></div>
+                <div id="inventoryMsg" style="margin-top: 10px;"></div>
             </div>
         </div>
     </div>
@@ -477,11 +457,11 @@
 
 <footer>
     <p>© 2026 নিভা মেডিকেল ষ্ট'ৰ — মইনুল হক (প্ৰতিষ্ঠাতা) | নাৱাজ ৰছুল (ব্যৱস্থাপক) | ২৪×৭ সেৱা</p>
-    <p><i class="fas fa-heart" style="color:#c44536;"></i> বিশ্বাস, যত্ন আৰু নিষ্ঠাৰ প্ৰতীক</p>
+    <p><i class="fas fa-heart" style="color:#b5472e;"></i> আপোনাৰ স্বাস্থ্যই আমাৰ প্ৰথম অগ্ৰাধিকাৰ</p>
 </footer>
 
 <script>
-    // ------ ROUTING ------
+    // ---------- PAGE ROUTING ----------
     const sections = {
         home: document.getElementById('home-section'),
         about: document.getElementById('about-section'),
@@ -489,17 +469,15 @@
         admin: document.getElementById('admin-section')
     };
     const navLinks = document.querySelectorAll('.nav-link');
-    let currentPage = 'home';
 
     function showSection(pageId) {
         Object.keys(sections).forEach(sec => {
             sections[sec].classList.remove('active-section');
         });
         sections[pageId].classList.add('active-section');
-        currentPage = pageId;
         navLinks.forEach(link => {
-            const dataPage = link.getAttribute('data-page');
-            if(dataPage === pageId) link.classList.add('active');
+            const pg = link.getAttribute('data-page');
+            if(pg === pageId) link.classList.add('active');
             else link.classList.remove('active');
         });
         if(pageId !== 'admin') {
@@ -510,7 +488,7 @@
             if(isLogged) {
                 document.getElementById('adminLoginContainer').style.display = 'none';
                 document.getElementById('adminDashboard').style.display = 'block';
-                renderInventoryTable();
+                renderInventory();
             } else {
                 document.getElementById('adminLoginContainer').style.display = 'block';
                 document.getElementById('adminDashboard').style.display = 'none';
@@ -526,81 +504,80 @@
         });
     });
 
-    // ---------- MEDICINE INVENTORY ----------
+    // ---------- INVENTORY LOGIC ----------
     let medicines = [];
 
-    function loadMedicines() {
+    function loadInventory() {
         const stored = localStorage.getItem('nivaMedicalInventory');
-        if(stored) {
-            medicines = JSON.parse(stored);
-        } else {
+        if(stored) medicines = JSON.parse(stored);
+        else {
             medicines = [
-                { name: "পাৰাসিটামল 500mg", stock: 210 },
-                { name: "ওমিপ্রাজল 20mg", stock: 94 },
+                { name: "Paracetamol 500mg", stock: 210 },
+                { name: "Omeprazole 20mg", stock: 94 },
                 { name: "Azithromycin 250mg", stock: 67 },
-                { name: "ইন্সুলিন চিৰিঞ্জ", stock: 45 },
+                { name: "Insulin Syringe", stock: 45 },
                 { name: "Vitamin C Tablets", stock: 320 }
             ];
-            saveMedicines();
+            saveInventory();
         }
     }
 
-    function saveMedicines() {
+    function saveInventory() {
         localStorage.setItem('nivaMedicalInventory', JSON.stringify(medicines));
     }
 
-    function renderInventoryTable() {
+    function renderInventory() {
         const tbody = document.getElementById('inventoryBody');
         if(!tbody) return;
         if(medicines.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="3">কোনো ঔষধ যোগ কৰা নাই</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="3">No medicines added yet</td></tr>';
             return;
         }
         let html = '';
         medicines.forEach((med, idx) => {
             html += `<tr>
                         <td><strong>${escapeHtml(med.name)}</strong></td>
-                        <td>${med.stock} পিচ</td>
+                        <td>${med.stock} pcs</td>
                         <td>
-                            <button class="delete-med-btn" data-index="${idx}"><i class="fas fa-trash"></i> Delete</button>
-                            <button class="edit-stock-btn" data-index="${idx}"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="delete-med" data-index="${idx}" style="background:#b45340; padding:6px 14px; margin-right:6px;">Delete</button>
+                            <button class="edit-med" data-index="${idx}" style="background:#2c7a5e; padding:6px 14px;">Edit Stock</button>
                         </td>
-                     </tr>`;
+                    </tr>`;
         });
         tbody.innerHTML = html;
-        document.querySelectorAll('.delete-med-btn').forEach(btn => {
+        document.querySelectorAll('.delete-med').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const idx = parseInt(btn.getAttribute('data-index'));
                 if(!isNaN(idx)) {
                     medicines.splice(idx, 1);
-                    saveMedicines();
-                    renderInventoryTable();
-                    showInventoryMsg("ঔষধ সফলভাবে মচি পেলোৱা হ'ল", "success");
+                    saveInventory();
+                    renderInventory();
+                    showInventoryMsg("Medicine deleted", "success");
                 }
             });
         });
-        document.querySelectorAll('.edit-stock-btn').forEach(btn => {
+        document.querySelectorAll('.edit-med').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const idx = parseInt(btn.getAttribute('data-index'));
                 if(!isNaN(idx) && medicines[idx]) {
-                    const newStock = prompt(`"${medicines[idx].name}" ৰ বাবে নতুন ষ্টক সংখ্যা লিখক:`, medicines[idx].stock);
+                    let newStock = prompt(`Edit stock for "${medicines[idx].name}":`, medicines[idx].stock);
                     if(newStock !== null && !isNaN(parseInt(newStock)) && parseInt(newStock) >= 0) {
                         medicines[idx].stock = parseInt(newStock);
-                        saveMedicines();
-                        renderInventoryTable();
-                        showInventoryMsg("ষ্টক আপডেট সম্পূৰ্ণ", "success");
-                    } else if(newStock !== null) showInventoryMsg("কৃপা কৰি সঠিক সংখ্যা দিয়ক", "error");
+                        saveInventory();
+                        renderInventory();
+                        showInventoryMsg("Stock updated", "success");
+                    } else if(newStock !== null) showInventoryMsg("Invalid number", "error");
                 }
             });
         });
     }
 
     function showInventoryMsg(msg, type) {
-        const msgDiv = document.getElementById('inventoryMsg');
-        if(msgDiv) {
-            msgDiv.innerText = msg;
-            msgDiv.style.color = type === 'success' ? '#1f7f5c' : '#c2412c';
-            setTimeout(() => msgDiv.innerText = '', 2700);
+        const div = document.getElementById('inventoryMsg');
+        if(div) {
+            div.innerText = msg;
+            div.style.color = type === 'success' ? '#0e8b5e' : '#b91c1c';
+            setTimeout(() => div.innerText = '', 2500);
         }
     }
 
@@ -614,28 +591,22 @@
     }
 
     function addOrUpdateMedicine(name, stock) {
-        if(!name.trim()) {
-            showInventoryMsg("ঔষধৰ নাম লিখক", "error");
-            return false;
-        }
-        if(isNaN(stock) || stock < 0) {
-            showInventoryMsg("ষ্টক সঠিক সংখ্যা দিয়ক", "error");
-            return false;
-        }
+        if(!name.trim()) { showInventoryMsg("Medicine name required", "error"); return false; }
+        if(isNaN(stock) || stock < 0) { showInventoryMsg("Valid stock number needed", "error"); return false; }
         const existing = medicines.findIndex(m => m.name.toLowerCase() === name.trim().toLowerCase());
         if(existing !== -1) {
             medicines[existing].stock = stock;
-            showInventoryMsg(`"${name}" ৰ ষ্টক আপডেট কৰা হ'ল`, "success");
+            showInventoryMsg(`Updated "${name}" stock`, "success");
         } else {
             medicines.push({ name: name.trim(), stock: stock });
-            showInventoryMsg(`"${name}" যোগ কৰা হ'ল`, "success");
+            showInventoryMsg(`Added "${name}"`, "success");
         }
-        saveMedicines();
-        renderInventoryTable();
+        saveInventory();
+        renderInventory();
         return true;
     }
 
-    // ----- Admin Auth -----
+    // ---------- ADMIN AUTH ----------
     const ADMIN_PASSWORD = "admin123";
 
     function initAdmin() {
@@ -643,23 +614,16 @@
         const passInput = document.getElementById('adminPassword');
         const logoutBtn = document.getElementById('logoutAdminBtn');
         const addBtn = document.getElementById('addMedicineBtn');
-
         if(loginBtn) {
             loginBtn.addEventListener('click', () => {
-                const entered = passInput.value;
-                if(entered === ADMIN_PASSWORD) {
+                if(passInput.value === ADMIN_PASSWORD) {
                     sessionStorage.setItem('adminLoggedIn', 'true');
                     document.getElementById('adminLoginContainer').style.display = 'none';
                     document.getElementById('adminDashboard').style.display = 'block';
-                    renderInventoryTable();
-                    const msgDiv = document.getElementById('loginMsg');
-                    if(msgDiv) msgDiv.innerText = "✔️ Login successful!";
+                    renderInventory();
+                    document.getElementById('loginMsg').innerHTML = "";
                 } else {
-                    const msgDiv = document.getElementById('loginMsg');
-                    if(msgDiv) {
-                        msgDiv.innerText = "ভুল পাছৱাৰ্ড! (admin123)";
-                        msgDiv.style.color = "#b45340";
-                    }
+                    document.getElementById('loginMsg').innerHTML = "<span style='color:#b45340;'>Wrong password! (admin123)</span>";
                 }
                 passInput.value = '';
             });
@@ -669,15 +633,13 @@
                 sessionStorage.removeItem('adminLoggedIn');
                 document.getElementById('adminDashboard').style.display = 'none';
                 document.getElementById('adminLoginContainer').style.display = 'block';
-                const loginMsgDiv = document.getElementById('loginMsg');
-                if(loginMsgDiv) loginMsgDiv.innerText = "";
             });
         }
         if(addBtn) {
             addBtn.addEventListener('click', () => {
-                const medName = document.getElementById('medName').value;
-                const medStock = parseInt(document.getElementById('medStock').value);
-                if(addOrUpdateMedicine(medName, medStock)) {
+                const name = document.getElementById('medName').value;
+                const stock = parseInt(document.getElementById('medStock').value);
+                if(addOrUpdateMedicine(name, stock)) {
                     document.getElementById('medName').value = '';
                     document.getElementById('medStock').value = '';
                 }
@@ -685,32 +647,15 @@
         }
     }
 
-    function checkAdminSession() {
-        const isLogged = sessionStorage.getItem('adminLoggedIn') === 'true';
-        if(currentPage === 'admin') {
-            if(isLogged) {
-                document.getElementById('adminLoginContainer').style.display = 'none';
-                document.getElementById('adminDashboard').style.display = 'block';
-                renderInventoryTable();
-            } else {
-                document.getElementById('adminLoginContainer').style.display = 'block';
-                document.getElementById('adminDashboard').style.display = 'none';
-            }
-        }
-    }
-
-    loadMedicines();
+    loadInventory();
     initAdmin();
     showSection('home');
-    checkAdminSession();
-
-    window.addEventListener('storage', (e) => {
-        if(e.key === 'nivaMedicalInventory' && currentPage === 'admin' && sessionStorage.getItem('adminLoggedIn') === 'true') {
-            loadMedicines();
-            renderInventoryTable();
-        }
-    });
+    const logged = sessionStorage.getItem('adminLoggedIn') === 'true';
+    if(logged && document.getElementById('admin-section').classList.contains('active-section')) {
+        document.getElementById('adminLoginContainer').style.display = 'none';
+        document.getElementById('adminDashboard').style.display = 'block';
+        renderInventory();
+    }
 </script>
 </body>
 </html>
-```
