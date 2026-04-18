@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>নিভা মেডিকেল ষ্ট'ৰ — Online Health Store | Since 1994</title>
+    <title>নিভা মেডিকেল ষ্ট'ৰ — Online Medicine Order | WhatsApp Care</title>
     <!-- Google Fonts + Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -16,22 +16,20 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #f8fafc;
+            background: #f7fafc;
             color: #1e2a3e;
             scroll-behavior: smooth;
         }
 
-        /* modern 1mg style colors */
         :root {
             --primary: #0e8b5e;
             --primary-dark: #0a6b48;
-            --primary-light: #dff1ea;
-            --accent: #2c7da0;
-            --gray-bg: #f9fbfd;
-            --border-light: #e6edf2;
+            --primary-light: #e0f2e9;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #128C7E;
+            --border-light: #e2edf2;
         }
 
-        /* scroll */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -43,7 +41,7 @@
             border-radius: 12px;
         }
 
-        /* navbar - clean, shadow */
+        /* navbar */
         .navbar {
             background: white;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
@@ -111,10 +109,6 @@
             gap: 6px;
         }
 
-        .nav-links a i {
-            font-size: 1rem;
-        }
-
         .nav-links a:hover, .nav-links a.active {
             color: var(--primary);
         }
@@ -124,23 +118,14 @@
             color: white !important;
             padding: 8px 20px;
             border-radius: 40px;
-            font-weight: 600;
-            transition: 0.2s;
         }
 
-        .admin-nav-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-        }
-
-        /* container */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 1.8rem 2rem 3rem;
         }
 
-        /* sections */
         .section {
             display: none;
             animation: fadeSlide 0.35s ease-out;
@@ -155,7 +140,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 1mg style hero banner */
+        /* hero */
         .hero-grid {
             display: flex;
             flex-wrap: wrap;
@@ -166,7 +151,6 @@
             margin-bottom: 2rem;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
             border: 1px solid #eef3f0;
         }
 
@@ -174,7 +158,6 @@
             font-size: 2.2rem;
             font-weight: 800;
             color: #144e3a;
-            line-height: 1.2;
         }
 
         .hero-badge {
@@ -189,34 +172,13 @@
             margin-top: 1rem;
         }
 
-        /* category cards like 1mg */
-        .cat-grid {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            margin: 1.8rem 0;
-        }
-        .cat-card {
-            background: white;
-            border-radius: 24px;
-            padding: 1rem 1.2rem;
-            text-align: center;
-            flex: 1;
-            min-width: 110px;
-            border: 1px solid var(--border-light);
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-        .cat-card i {
-            font-size: 2rem;
-            color: var(--primary);
-        }
         .stat-row {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
             margin: 2rem 0;
         }
+
         .stat-item {
             background: white;
             border-radius: 28px;
@@ -225,24 +187,94 @@
             border: 1px solid var(--border-light);
         }
 
-        /* product showcase like 1mg */
-        .product-showcase {
-            margin-top: 2rem;
+        /* product / medicine listing for online order */
+        .medicine-catalog {
+            margin: 2rem 0;
         }
-        .product-grid {
+
+        .catalog-header {
             display: flex;
-            gap: 1.5rem;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
-        .product-card {
+
+        .medicine-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .medicine-order-card {
             background: white;
             border-radius: 24px;
             padding: 1.2rem;
-            width: 180px;
-            text-align: center;
-            transition: 0.2s;
+            width: 220px;
             border: 1px solid #eef2f0;
+            transition: 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .medicine-order-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px rgba(0,0,0,0.08);
+        }
+
+        .med-name {
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 8px 0;
+        }
+
+        .med-stock {
+            font-size: 0.8rem;
+            color: #5f8b7a;
+            margin-bottom: 12px;
+        }
+
+        .order-quantity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .order-quantity input {
+            width: 60px;
+            padding: 6px;
+            border-radius: 20px;
+            border: 1px solid #cbdcd3;
+            text-align: center;
+        }
+
+        .whatsapp-order-btn {
+            background: var(--whatsapp);
+            width: 100%;
+            padding: 8px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-order-btn:hover {
+            background: var(--whatsapp-dark);
+        }
+
+        .cart-sidebar {
+            background: white;
+            border-radius: 28px;
+            padding: 1.2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .cart-items-list {
+            max-height: 250px;
+            overflow-y: auto;
         }
 
         /* about/contact cards */
@@ -251,7 +283,6 @@
             border-radius: 32px;
             padding: 2rem;
             border: 1px solid #eef3f0;
-            box-shadow: 0 8px 22px rgba(0,0,0,0.02);
         }
 
         .map-modern {
@@ -262,56 +293,54 @@
             align-items: center;
             justify-content: center;
             margin-top: 1.5rem;
-            background-image: url('https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Tamulpur+Assam+781354');
             background-size: cover;
             background-position: center;
         }
 
-        /* admin panel modern */
-        .admin-card {
-            background: white;
-            border-radius: 32px;
-            padding: 2rem;
-            max-width: 600px;
-            margin: 1rem auto;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.05);
-            border: 1px solid #e9f0ed;
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--whatsapp);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.2s;
         }
 
-        .input-modern {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1.5px solid #e0eae5;
-            border-radius: 48px;
-            font-size: 0.95rem;
-            transition: 0.2s;
+        .whatsapp-float i {
+            font-size: 34px;
+            color: white;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
         }
 
         button {
             background: var(--primary);
             border: none;
-            padding: 12px 28px;
+            padding: 10px 20px;
             border-radius: 44px;
             color: white;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
         }
 
         .inventory-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1.2rem;
         }
 
         .inventory-table th, .inventory-table td {
             border-bottom: 1px solid #e2ede7;
-            padding: 14px 8px;
+            padding: 12px 8px;
             text-align: left;
         }
 
@@ -320,37 +349,30 @@
             padding: 2rem;
             background: #f1f5f9;
             margin-top: 3rem;
-            color: #3b6b5c;
-            font-size: 0.85rem;
         }
 
         @media (max-width: 780px) {
-            .navbar {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 12px;
-            }
-            .hero-content h2 {
-                font-size: 1.7rem;
-            }
+            .navbar { padding: 1rem; flex-direction: column; gap: 12px; }
+            .hero-content h2 { font-size: 1.7rem; }
+            .medicine-order-card { width: 100%; }
         }
     </style>
 </head>
 <body>
 
+<div class="whatsapp-float" id="whatsappFloatBtn">
+    <i class="fab fa-whatsapp"></i>
+</div>
+
 <header>
     <div class="navbar">
         <div class="logo-area" onclick="showSection('home')">
-            <div class="logo-icon">
-                <i class="fas fa-prescription-bottle-alt"></i>
-            </div>
-            <div class="logo-text">
-                <h1>নিভা মেডিকেল</h1>
-                <p>⚕️ তামুলপুৰ বৰঘূলি | Since 1994</p>
-            </div>
+            <div class="logo-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
+            <div class="logo-text"><h1>নিভা মেডিকেল</h1><p>⚕️ তামুলপুৰ বৰঘূলি | Since 1994</p></div>
         </div>
         <div class="nav-links">
             <a href="#" data-page="home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="#" data-page="order" class="nav-link"><i class="fas fa-shopping-cart"></i> Order Medicines</a>
             <a href="#" data-page="about" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
             <a href="#" data-page="contact" class="nav-link"><i class="fas fa-phone-alt"></i> Contact</a>
             <a href="#" data-page="admin" class="nav-link admin-nav-btn"><i class="fas fa-shield-alt"></i> Admin</a>
@@ -359,155 +381,90 @@
 </header>
 
 <main class="container">
-    <!-- HOME section - 1mg style -->
+    <!-- HOME SECTION -->
     <div id="home-section" class="section active-section">
         <div class="hero-grid">
             <div class="hero-content">
                 <h2>আপোনাৰ স্বাস্থ্য,<br>আমাৰ অঙ্গীকাৰ</h2>
-                <p style="margin-top: 0.8rem; color: #3e6b5c;">২৪×৭ ঘণ্টা সেৱা | সঠিক ঔষধ, সঠিক সময়ত | তামুলপুৰৰ বিশ্বস্ত নাম</p>
-                <div class="hero-badge"><i class="fas fa-truck"></i> Free Home Delivery*</div>
+                <p style="margin-top: 0.8rem;">২৪×৭ ঘণ্টা সেৱা | WhatsApp অৰ্ডাৰ | সঠিক ঔষধ</p>
+                <div class="hero-badge"><i class="fab fa-whatsapp"></i> WhatsApp অৰ্ডাৰ লৈবক</div>
             </div>
             <div><i class="fas fa-hand-holding-medical" style="font-size: 5rem; color: var(--primary);"></i></div>
         </div>
-
-        <div class="cat-grid">
-            <div class="cat-card"><i class="fas fa-capsules"></i><p>Medicines</p></div>
-            <div class="cat-card"><i class="fas fa-heartbeat"></i><p>Diabetes</p></div>
-            <div class="cat-card"><i class="fas fa-baby-carriage"></i><p>Baby Care</p></div>
-            <div class="cat-card"><i class="fas fa-lungs"></i><p>Respiratory</p></div>
-        </div>
-
         <div class="stat-row">
-            <div class="stat-item"><i class="fas fa-calendar-check" style="color: var(--primary);"></i><h3>29+ Years</h3><p>Trusted Excellence</p></div>
-            <div class="stat-item"><i class="fas fa-user-md"></i><h3>নাৱাজ ৰছুল</h3><p>Manager (24×7)</p></div>
+            <div class="stat-item"><i class="fas fa-calendar-check"></i><h3>29+ Years</h3><p>Trusted Care</p></div>
+            <div class="stat-item"><i class="fas fa-user-md"></i><h3>নাৱাজ ৰছুল</h3><p>Manager 24×7</p></div>
             <div class="stat-item"><i class="fas fa-map-marker-alt"></i><h3>তামুলপুৰ</h3><p>বৰঘূলি, 781354</p></div>
         </div>
+        <div class="medicine-catalog">
+            <h3><i class="fas fa-capsules"></i> জনপ্ৰিয় ঔষধসমূহ</h3>
+            <div class="medicine-grid" id="homePreviewMedicines"></div>
+        </div>
+    </div>
 
-        <div class="product-showcase">
-            <h3><i class="fas fa-prescription"></i> Popular Healthcare</h3>
-            <div class="product-grid">
-                <div class="product-card"><i class="fas fa-pills" style="font-size: 2rem;"></i><p>Prescription Drugs</p></div>
-                <div class="product-card"><i class="fas fa-syringe"></i><p>Wellness Kits</p></div>
-                <div class="product-card"><i class="fas fa-procedures"></i><p>Support & Care</p></div>
+    <!-- ONLINE ORDER SECTION (Medicine ordering + WhatsApp cart) -->
+    <div id="order-section" class="section">
+        <div class="info-card">
+            <h2><i class="fab fa-whatsapp"></i> Online Medicine Order System</h2>
+            <p style="margin-bottom: 1rem;">ঔষধ বাছনি কৰক, পৰিমাণ যোগ কৰক আৰু WhatsApp ৰ জৰিয়তে অৰ্ডাৰ দিয়ক। আমি দ্ৰুত যোগাযোগ কৰিম।</p>
+            <div class="catalog-header">
+                <h3>📦 Available Medicines</h3>
+                <button id="clearCartBtn" style="background:#6c757d;">Clear Cart</button>
+            </div>
+            <div class="medicine-grid" id="orderMedicineGrid"></div>
+            
+            <div class="cart-sidebar">
+                <h3><i class="fas fa-shopping-bag"></i> Your Order Cart</h3>
+                <div id="cartItemsList" class="cart-items-list"></div>
+                <div style="margin-top: 1rem; font-weight: bold;">Total Items: <span id="cartTotalQty">0</span></div>
+                <button id="sendWhatsappOrderBtn" style="background: #25D366; margin-top: 1rem; width: 100%;"><i class="fab fa-whatsapp"></i> Place Order via WhatsApp</button>
             </div>
         </div>
     </div>
 
-    <!-- ABOUT section -->
+    <!-- ABOUT SECTION -->
     <div id="about-section" class="section">
         <div class="info-card">
             <h2><i class="fas fa-store-alt"></i> About নিভা মেডিকেল ষ্ট'ৰ</h2>
-            <p style="margin-top: 1rem; line-height: 1.6;">১৯৯৪ চনত <strong>মইনুল হক</strong> দ্বাৰা প্ৰতিষ্ঠা কৰা <strong>নিভা মেডিকেল ষ্ট'ৰ</strong> তামুলপুৰ বৰঘূলিৰ সকলোৰে সু-পৰিচিত নাম।</p>
-            <p style="margin-top: 1rem;">বিগত ২৯+ বছৰ ধৰি আমি গুণগত মানসম্পন্ন ঔষধ আৰু স্বাস্থ্য সামগ্ৰী যোগান ধৰি আহিছো। <strong>নাৱাজ ৰছুল</strong> এ ২৪×৭ ঘণ্টা সেৱা আগবঢ়াই আহিছে, যাৰ ফলত ৰাতি যিকোনো জৰুৰীকালীন পৰিস্থিতিত গ্ৰাহকে সেৱা লাভ কৰে।</p>
-            <div style="margin-top: 1.5rem; background: #eff8f3; padding: 1rem; border-radius: 24px;"><i class="fas fa-quote-left"></i> সত্যতা আৰু সেবাই আমাক গঢ় দিছে — গ্ৰাহকৰ সন্তুষ্টি আমাৰ অঙ্গীকাৰ</div>
+            <p style="margin-top: 1rem;">১৯৯৪ চনত <strong>মইনুল হক</strong> দ্বাৰা প্ৰতিষ্ঠা কৰা <strong>নিভা মেডিকেল ষ্ট'ৰ</strong> তামুলপুৰ বৰঘূলিৰ সু-পৰিচিত নাম।</p>
+            <p style="margin-top: 1rem;"><strong>নাৱাজ ৰছুল</strong> ২৪×৭ ঘণ্টা সেৱা আগবঢ়াই আহিছে। গুণগত মান আৰু সততা আমাৰ মূলমন্ত্ৰ।</p>
         </div>
     </div>
 
-    <!-- CONTACT section -->
+    <!-- CONTACT SECTION -->
     <div id="contact-section" class="section">
         <div class="info-card">
-            <h2><i class="fas fa-address-card"></i> যোগাযোগৰ তথ্য</h2>
-            <ul style="margin-top: 1.2rem; list-style: none; line-height: 2.2;">
+            <h2><i class="fas fa-address-card"></i> যোগাযোগ</h2>
+            <ul style="margin-top: 1rem; list-style: none; line-height: 2.2;">
                 <li><i class="fas fa-user-tie"></i> <strong>ব্যৱস্থাপক:</strong> নাৱাজ ৰছুল</li>
-                <li><i class="fas fa-phone-alt"></i> <strong>ফোন:</strong> <a href="tel:9954172699" style="color:var(--primary);">9954172699</a> , <a href="tel:8822480793" style="color:var(--primary);">8822480793</a></li>
+                <li><i class="fas fa-phone-alt"></i> <strong>ফোন:</strong> <a href="tel:9954172699">9954172699</a> , <a href="tel:8822480793">8822480793</a></li>
+                <li><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/919954172699" target="_blank">9954172699 (Click to chat)</a></li>
                 <li><i class="fas fa-map-pin"></i> <strong>পিন কোড:</strong> 781354</li>
-                <li><i class="fas fa-location-dot"></i> <strong>ঠিকনা:</strong> বৰঘূলি, তামুলপুৰ, অসম</li>
             </ul>
-            <div class="map-modern">
-                <a href="https://www.google.com/maps/search/?api=1&query=Tamulpur+Bhorguli+Assam+781354" target="_blank" style="background: rgba(0,0,0,0.65); padding: 12px 22px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600;"><i class="fab fa-google"></i> Google Map ত চাওক</a>
+            <div class="map-modern" style="background:#eef3ef; display:flex; align-items:center; justify-content:center;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Tamulpur+Bhorguli+Assam+781354" target="_blank" style="background:rgba(0,0,0,0.7); padding:12px 22px; border-radius:50px; color:white; text-decoration:none;"><i class="fab fa-google"></i> Google Map</a>
             </div>
-            <p style="margin-top: 1rem;"><i class="fas fa-clock"></i> ২৪×৭ ঘণ্টা খোলা থাকে | জৰুৰীকালীন সেৱা</p>
         </div>
     </div>
 
-    <!-- ADMIN PANEL (1mg style) -->
+    <!-- ADMIN PANEL -->
     <div id="admin-section" class="section">
-        <div id="adminLoginContainer">
-            <div class="admin-card">
-                <h2><i class="fas fa-lock"></i> Admin Access</h2>
-                <p style="margin-bottom: 1rem;">প্ৰশাসনিক পেনেলত প্ৰৱেশ কৰক (demo: admin123)</p>
-                <div class="input-group">
-                    <input type="password" id="adminPassword" class="input-modern" placeholder="Enter password">
-                </div>
-                <button id="loginAdminBtn">Login <i class="fas fa-arrow-right"></i></button>
-                <div id="loginMsg" style="margin-top: 12px;"></div>
-            </div>
-        </div>
-        <div id="adminDashboard" style="display: none;">
-            <div class="admin-card">
-                <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-                    <h2><i class="fas fa-chalkboard"></i> Inventory Manager</h2>
-                    <button id="logoutAdminBtn" style="background:#9e5c48;">Logout</button>
-                </div>
-                <p style="margin: 1rem 0;">Manage medicine stock — add or update medicines (local storage)</p>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <input type="text" id="medName" class="input-modern" placeholder="Medicine name" style="flex:2">
-                    <input type="number" id="medStock" class="input-modern" placeholder="Stock" style="flex:1">
-                    <button id="addMedicineBtn">Add / Update</button>
-                </div>
-                <table class="inventory-table">
-                    <thead><tr><th>Medicine</th><th>Stock</th><th>Actions</th></tr></thead>
-                    <tbody id="inventoryBody"><tr><td colspan="3">Loading...</td></tr></tbody>
-                </table>
-                <div id="inventoryMsg" style="margin-top: 10px;"></div>
-            </div>
-        </div>
+        <div id="adminLoginContainer"><div class="info-card" style="max-width:500px; margin:auto;"><h2>Admin Login</h2><input type="password" id="adminPassword" style="width:100%; padding:12px; border-radius:40px; margin:1rem 0;"><button id="loginAdminBtn">Login</button><div id="loginMsg"></div></div></div>
+        <div id="adminDashboard" style="display:none;"><div class="info-card"><h2>Inventory Manager</h2><button id="logoutAdminBtn" style="background:#b45340; margin-bottom:1rem;">Logout</button><div style="display:flex; gap:8px;"><input type="text" id="medName" placeholder="Medicine Name"><input type="number" id="medStock" placeholder="Stock"><button id="addMedicineBtn">Add/Update</button></div><table class="inventory-table"><thead><tr><th>Medicine</th><th>Stock</th><th>Actions</th></tr></thead><tbody id="inventoryBody"></tbody></table><div id="inventoryMsg"></div></div></div>
     </div>
 </main>
 
 <footer>
-    <p>© 2026 নিভা মেডিকেল ষ্ট'ৰ — মইনুল হক (প্ৰতিষ্ঠাতা) | নাৱাজ ৰছুল (ব্যৱস্থাপক) | ২৪×৭ সেৱা</p>
-    <p><i class="fas fa-heart" style="color:#b5472e;"></i> আপোনাৰ স্বাস্থ্যই আমাৰ প্ৰথম অগ্ৰাধিকাৰ</p>
+    <p>© 2026 নিভা মেডিকেল ষ্ট'ৰ — মইনুল হক (প্ৰতিষ্ঠাতা) | নাৱাজ ৰছুল (ব্যৱস্থাপক) | WhatsApp অৰ্ডাৰ চিস্টেম</p>
 </footer>
 
 <script>
-    // ---------- PAGE ROUTING ----------
-    const sections = {
-        home: document.getElementById('home-section'),
-        about: document.getElementById('about-section'),
-        contact: document.getElementById('contact-section'),
-        admin: document.getElementById('admin-section')
-    };
-    const navLinks = document.querySelectorAll('.nav-link');
+    // ---------- DATA & STORAGE ----------
+    let medicines = [];  // { name, stock }
+    let cart = [];      // { medicineName, quantity, stock }
 
-    function showSection(pageId) {
-        Object.keys(sections).forEach(sec => {
-            sections[sec].classList.remove('active-section');
-        });
-        sections[pageId].classList.add('active-section');
-        navLinks.forEach(link => {
-            const pg = link.getAttribute('data-page');
-            if(pg === pageId) link.classList.add('active');
-            else link.classList.remove('active');
-        });
-        if(pageId !== 'admin') {
-            document.getElementById('adminDashboard').style.display = 'none';
-            document.getElementById('adminLoginContainer').style.display = 'block';
-        } else {
-            const isLogged = sessionStorage.getItem('adminLoggedIn') === 'true';
-            if(isLogged) {
-                document.getElementById('adminLoginContainer').style.display = 'none';
-                document.getElementById('adminDashboard').style.display = 'block';
-                renderInventory();
-            } else {
-                document.getElementById('adminLoginContainer').style.display = 'block';
-                document.getElementById('adminDashboard').style.display = 'none';
-            }
-        }
-    }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const page = link.getAttribute('data-page');
-            if(page) showSection(page);
-        });
-    });
-
-    // ---------- INVENTORY LOGIC ----------
-    let medicines = [];
-
-    function loadInventory() {
+    // Load medicines from localStorage
+    function loadMedicines() {
         const stored = localStorage.getItem('nivaMedicalInventory');
         if(stored) medicines = JSON.parse(stored);
         else {
@@ -516,57 +473,151 @@
                 { name: "Omeprazole 20mg", stock: 94 },
                 { name: "Azithromycin 250mg", stock: 67 },
                 { name: "Insulin Syringe", stock: 45 },
-                { name: "Vitamin C Tablets", stock: 320 }
+                { name: "Vitamin C Tablets", stock: 320 },
+                { name: "Amoxicillin 500mg", stock: 120 }
             ];
-            saveInventory();
+            saveMedicines();
         }
     }
+    function saveMedicines() { localStorage.setItem('nivaMedicalInventory', JSON.stringify(medicines)); }
+    function saveCart() { localStorage.setItem('nivaOrderCart', JSON.stringify(cart)); }
+    function loadCart() { const c = localStorage.getItem('nivaOrderCart'); if(c) cart = JSON.parse(c); else cart = []; }
 
-    function saveInventory() {
-        localStorage.setItem('nivaMedicalInventory', JSON.stringify(medicines));
+    // Helper: update stock for a medicine
+    function updateMedicineStock(medName, newStock) {
+        let idx = medicines.findIndex(m => m.name.toLowerCase() === medName.toLowerCase());
+        if(idx !== -1) medicines[idx].stock = newStock;
+        saveMedicines();
+        renderAllMedicineDisplays();
     }
 
-    function renderInventory() {
-        const tbody = document.getElementById('inventoryBody');
-        if(!tbody) return;
-        if(medicines.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="3">No medicines added yet</td></tr>';
-            return;
-        }
+    // Render functions
+    function renderHomePreview() {
+        const container = document.getElementById('homePreviewMedicines');
+        if(!container) return;
         let html = '';
-        medicines.forEach((med, idx) => {
-            html += `<tr>
-                        <td><strong>${escapeHtml(med.name)}</strong></td>
-                        <td>${med.stock} pcs</td>
-                        <td>
-                            <button class="delete-med" data-index="${idx}" style="background:#b45340; padding:6px 14px; margin-right:6px;">Delete</button>
-                            <button class="edit-med" data-index="${idx}" style="background:#2c7a5e; padding:6px 14px;">Edit Stock</button>
-                        </td>
-                    </tr>`;
+        medicines.slice(0, 4).forEach(med => {
+            html += `<div class="medicine-order-card"><i class="fas fa-tablets" style="font-size:1.8rem;"></i><div class="med-name">${escapeHtml(med.name)}</div><div class="med-stock">Stock: ${med.stock}</div></div>`;
         });
-        tbody.innerHTML = html;
-        document.querySelectorAll('.delete-med').forEach(btn => {
+        container.innerHTML = html;
+    }
+
+    function renderOrderGrid() {
+        const grid = document.getElementById('orderMedicineGrid');
+        if(!grid) return;
+        let html = '';
+        medicines.forEach(med => {
+            html += `<div class="medicine-order-card">
+                        <i class="fas fa-capsules" style="font-size:1.8rem;"></i>
+                        <div class="med-name">${escapeHtml(med.name)}</div>
+                        <div class="med-stock">Available: ${med.stock}</div>
+                        <div class="order-quantity">
+                            <input type="number" id="qty-${escapeHtml(med.name).replace(/\s/g, '')}" placeholder="Qty" min="1" max="${med.stock}" value="1" style="width:70px;">
+                            <button class="add-to-cart-btn" data-name="${escapeHtml(med.name)}" data-stock="${med.stock}">Add to Cart</button>
+                        </div>
+                    </div>`;
+        });
+        grid.innerHTML = html;
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const idx = parseInt(btn.getAttribute('data-index'));
-                if(!isNaN(idx)) {
-                    medicines.splice(idx, 1);
-                    saveInventory();
-                    renderInventory();
-                    showInventoryMsg("Medicine deleted", "success");
-                }
+                let name = btn.getAttribute('data-name');
+                let maxStock = parseInt(btn.getAttribute('data-stock'));
+                let inputId = `qty-${name.replace(/\s/g, '')}`;
+                let qtyInput = document.getElementById(inputId);
+                let qty = parseInt(qtyInput.value);
+                if(isNaN(qty) || qty < 1) qty = 1;
+                if(qty > maxStock) { alert(`Only ${maxStock} in stock`); return; }
+                addToCart(name, qty);
             });
         });
-        document.querySelectorAll('.edit-med').forEach(btn => {
+    }
+
+    function addToCart(medName, qty) {
+        let med = medicines.find(m => m.name.toLowerCase() === medName.toLowerCase());
+        if(!med) { alert("Medicine not found"); return; }
+        if(qty > med.stock) { alert(`Only ${med.stock} available`); return; }
+        let existing = cart.find(c => c.medicineName === medName);
+        if(existing) {
+            if(existing.quantity + qty > med.stock) { alert(`Cannot exceed stock (${med.stock})`); return; }
+            existing.quantity += qty;
+        } else {
+            cart.push({ medicineName: medName, quantity: qty });
+        }
+        saveCart();
+        renderCartUI();
+    }
+
+    function renderCartUI() {
+        const container = document.getElementById('cartItemsList');
+        if(!container) return;
+        if(cart.length === 0) { container.innerHTML = '<p>No items in cart</p>'; document.getElementById('cartTotalQty').innerText = '0'; return; }
+        let html = '<ul style="list-style:none;">';
+        let total = 0;
+        cart.forEach((item, idx) => {
+            total += item.quantity;
+            html += `<li style="display:flex; justify-content:space-between; border-bottom:1px solid #eef; padding:8px 0;">
+                        ${escapeHtml(item.medicineName)} x ${item.quantity}
+                        <button class="remove-cart-item" data-index="${idx}" style="background:#b45340; padding:4px 12px;">Remove</button>
+                     </li>`;
+        });
+        html += '</ul>';
+        container.innerHTML = html;
+        document.getElementById('cartTotalQty').innerText = total;
+        document.querySelectorAll('.remove-cart-item').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const idx = parseInt(btn.getAttribute('data-index'));
-                if(!isNaN(idx) && medicines[idx]) {
-                    let newStock = prompt(`Edit stock for "${medicines[idx].name}":`, medicines[idx].stock);
-                    if(newStock !== null && !isNaN(parseInt(newStock)) && parseInt(newStock) >= 0) {
-                        medicines[idx].stock = parseInt(newStock);
-                        saveInventory();
-                        renderInventory();
-                        showInventoryMsg("Stock updated", "success");
-                    } else if(newStock !== null) showInventoryMsg("Invalid number", "error");
+                let idx = parseInt(btn.getAttribute('data-index'));
+                cart.splice(idx, 1);
+                saveCart();
+                renderCartUI();
+            });
+        });
+    }
+
+    function sendWhatsAppOrder() {
+        if(cart.length === 0) { alert("Your cart is empty! Add medicines first."); return; }
+        let phone = "9954172699";
+        let message = "🛒 *New Medicine Order from নিভা মেডিকেল Website*%0A";
+        message += `Customer Name: *Online Customer*%0A`;
+        message += `Order Details:%0A`;
+        cart.forEach(item => {
+            message += `- ${item.medicineName} : ${item.quantity} pcs%0A`;
+        });
+        message += `%0A📍 Store: নিভা মেডিকেল ষ্ট'ৰ, তামুলপুৰ বৰঘূলি%0A`;
+        message += `Please confirm availability & delivery. Thank you.`;
+        let url = `https://wa.me/${phone}?text=${message}`;
+        window.open(url, '_blank');
+    }
+
+    // Admin inventory functions
+    function renderInventoryTable() {
+        const tbody = document.getElementById('inventoryBody');
+        if(!tbody) return;
+        if(medicines.length === 0) { tbody.innerHTML = '<tr><td colspan="3">No medicines</td></tr>'; return; }
+        let html = '';
+        medicines.forEach((med, idx) => {
+            html += `<tr><td>${escapeHtml(med.name)}</td><td>${med.stock}</td><td><button class="admin-delete" data-index="${idx}">Delete</button> <button class="admin-edit" data-index="${idx}">Edit Stock</button></td></tr>`;
+        });
+        tbody.innerHTML = html;
+        document.querySelectorAll('.admin-delete').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                let idx = parseInt(btn.getAttribute('data-index'));
+                medicines.splice(idx, 1);
+                saveMedicines();
+                renderInventoryTable();
+                renderAllMedicineDisplays();
+                showInventoryMsg("Deleted", "success");
+            });
+        });
+        document.querySelectorAll('.admin-edit').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                let idx = parseInt(btn.getAttribute('data-index'));
+                let newStock = prompt("New stock count:", medicines[idx].stock);
+                if(newStock !== null && !isNaN(parseInt(newStock))) {
+                    medicines[idx].stock = parseInt(newStock);
+                    saveMedicines();
+                    renderInventoryTable();
+                    renderAllMedicineDisplays();
+                    showInventoryMsg("Stock updated", "success");
                 }
             });
         });
@@ -574,88 +625,63 @@
 
     function showInventoryMsg(msg, type) {
         const div = document.getElementById('inventoryMsg');
-        if(div) {
-            div.innerText = msg;
-            div.style.color = type === 'success' ? '#0e8b5e' : '#b91c1c';
-            setTimeout(() => div.innerText = '', 2500);
-        }
-    }
-
-    function escapeHtml(str) {
-        return str.replace(/[&<>]/g, function(m) {
-            if(m === '&') return '&amp;';
-            if(m === '<') return '&lt;';
-            if(m === '>') return '&gt;';
-            return m;
-        });
+        if(div) { div.innerText = msg; div.style.color = type==='success'? '#0e8b5e':'red'; setTimeout(()=>div.innerText='',2000);}
     }
 
     function addOrUpdateMedicine(name, stock) {
-        if(!name.trim()) { showInventoryMsg("Medicine name required", "error"); return false; }
-        if(isNaN(stock) || stock < 0) { showInventoryMsg("Valid stock number needed", "error"); return false; }
-        const existing = medicines.findIndex(m => m.name.toLowerCase() === name.trim().toLowerCase());
-        if(existing !== -1) {
-            medicines[existing].stock = stock;
-            showInventoryMsg(`Updated "${name}" stock`, "success");
-        } else {
-            medicines.push({ name: name.trim(), stock: stock });
-            showInventoryMsg(`Added "${name}"`, "success");
-        }
-        saveInventory();
-        renderInventory();
+        if(!name.trim()) { showInventoryMsg("Name required","error"); return false; }
+        let existing = medicines.find(m => m.name.toLowerCase() === name.trim().toLowerCase());
+        if(existing) { existing.stock = stock; showInventoryMsg(`Updated ${name}`, "success"); }
+        else { medicines.push({ name: name.trim(), stock: stock }); showInventoryMsg(`Added ${name}`, "success"); }
+        saveMedicines();
+        renderInventoryTable();
+        renderAllMedicineDisplays();
         return true;
     }
 
-    // ---------- ADMIN AUTH ----------
-    const ADMIN_PASSWORD = "admin123";
+    function renderAllMedicineDisplays() {
+        renderHomePreview();
+        renderOrderGrid();
+        renderCartUI(); 
+        // also adjust max stock in order grid after stock changes but we re-render full grid
+    }
 
+    // Admin Auth
     function initAdmin() {
         const loginBtn = document.getElementById('loginAdminBtn');
-        const passInput = document.getElementById('adminPassword');
+        const pass = document.getElementById('adminPassword');
         const logoutBtn = document.getElementById('logoutAdminBtn');
         const addBtn = document.getElementById('addMedicineBtn');
-        if(loginBtn) {
-            loginBtn.addEventListener('click', () => {
-                if(passInput.value === ADMIN_PASSWORD) {
-                    sessionStorage.setItem('adminLoggedIn', 'true');
-                    document.getElementById('adminLoginContainer').style.display = 'none';
-                    document.getElementById('adminDashboard').style.display = 'block';
-                    renderInventory();
-                    document.getElementById('loginMsg').innerHTML = "";
-                } else {
-                    document.getElementById('loginMsg').innerHTML = "<span style='color:#b45340;'>Wrong password! (admin123)</span>";
-                }
-                passInput.value = '';
-            });
-        }
-        if(logoutBtn) {
-            logoutBtn.addEventListener('click', () => {
-                sessionStorage.removeItem('adminLoggedIn');
-                document.getElementById('adminDashboard').style.display = 'none';
-                document.getElementById('adminLoginContainer').style.display = 'block';
-            });
-        }
-        if(addBtn) {
-            addBtn.addEventListener('click', () => {
-                const name = document.getElementById('medName').value;
-                const stock = parseInt(document.getElementById('medStock').value);
-                if(addOrUpdateMedicine(name, stock)) {
-                    document.getElementById('medName').value = '';
-                    document.getElementById('medStock').value = '';
-                }
-            });
-        }
+        if(loginBtn) loginBtn.onclick = () => {
+            if(pass.value === "admin123") { sessionStorage.setItem('adminLoggedIn','true'); document.getElementById('adminLoginContainer').style.display='none'; document.getElementById('adminDashboard').style.display='block'; renderInventoryTable(); }
+            else document.getElementById('loginMsg').innerHTML = "<span style='color:red'>Wrong password (admin123)</span>";
+        };
+        if(logoutBtn) logoutBtn.onclick = () => { sessionStorage.removeItem('adminLoggedIn'); document.getElementById('adminDashboard').style.display='none'; document.getElementById('adminLoginContainer').style.display='block'; };
+        if(addBtn) addBtn.onclick = () => { let name = document.getElementById('medName').value; let stock = parseInt(document.getElementById('medStock').value); if(addOrUpdateMedicine(name, stock)){ document.getElementById('medName').value=''; document.getElementById('medStock').value=''; } };
     }
 
-    loadInventory();
-    initAdmin();
-    showSection('home');
-    const logged = sessionStorage.getItem('adminLoggedIn') === 'true';
-    if(logged && document.getElementById('admin-section').classList.contains('active-section')) {
-        document.getElementById('adminLoginContainer').style.display = 'none';
-        document.getElementById('adminDashboard').style.display = 'block';
-        renderInventory();
+    function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
+
+    // Page routing
+    const sections = { home:document.getElementById('home-section'), order:document.getElementById('order-section'), about:document.getElementById('about-section'), contact:document.getElementById('contact-section'), admin:document.getElementById('admin-section') };
+    const navLinks = document.querySelectorAll('.nav-link');
+    function showSection(pageId) {
+        Object.keys(sections).forEach(sec => sections[sec].classList.remove('active-section'));
+        sections[pageId].classList.add('active-section');
+        navLinks.forEach(link => { if(link.getAttribute('data-page')===pageId) link.classList.add('active'); else link.classList.remove('active'); });
+        if(pageId !== 'admin') { document.getElementById('adminDashboard') && (document.getElementById('adminDashboard').style.display='none'); document.getElementById('adminLoginContainer') && (document.getElementById('adminLoginContainer').style.display='block'); }
+        else { let logged = sessionStorage.getItem('adminLoggedIn')==='true'; if(logged){ if(document.getElementById('adminLoginContainer')) document.getElementById('adminLoginContainer').style.display='none'; if(document.getElementById('adminDashboard')) document.getElementById('adminDashboard').style.display='block'; renderInventoryTable(); } else { if(document.getElementById('adminLoginContainer')) document.getElementById('adminLoginContainer').style.display='block'; if(document.getElementById('adminDashboard')) document.getElementById('adminDashboard').style.display='none'; } }
+        if(pageId === 'order') renderOrderGrid();
+        if(pageId === 'home') renderHomePreview();
+        renderCartUI();
     }
+    navLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); showSection(link.getAttribute('data-page')); }));
+    document.getElementById('sendWhatsappOrderBtn')?.addEventListener('click', sendWhatsAppOrder);
+    document.getElementById('clearCartBtn')?.addEventListener('click', () => { cart = []; saveCart(); renderCartUI(); });
+    document.getElementById('whatsappFloatBtn')?.addEventListener('click', () => { window.open('https://wa.me/919954172699', '_blank'); });
+
+    loadMedicines(); loadCart(); initAdmin(); showSection('home'); renderAllMedicineDisplays(); renderCartUI();
 </script>
 </body>
 </html>
+```
